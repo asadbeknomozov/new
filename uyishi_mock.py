@@ -84,10 +84,44 @@
 # print(get_phone_number(contacts, search_name))
 
 
+# import turtle
+# t = turtle.Turtle()
+# s = turtle.Screen()
+# s.bgcolor("black")
+# t.speed(0)
+# turtle.tracer(4,0)
+
+# colors =["#FFE0B2", "#FFB74D", "#FFA726", "#FB8C00", "#E65100"]
+
+# for i in range(360):
+#     t.color(colors[i%5])
+#     t.circle(140)
+#     t.left(1)
+# turtle.done()
 
 
 
+import turtle
 
+t = turtle.Turtle()
+s = turtle.Screen()
 
+s.bgcolor("black")
+t.speed(0)
+turtle.tracer(0)
+
+colors = ["#FFE0B2", "#FFB74D", "#FFA726", "#FB8C00", "#E65100"]
+
+while True:
+    t.clear()  # Eski chizmalarni o'chirish
+
+    for i in range(360):
+        t.color(colors[i % 5])
+        t.circle(140)
+        t.left(1)
+
+    t.right(2)  # Har safar 2° ga burilib qayta chizadi
+
+    turtle.update()
 
 

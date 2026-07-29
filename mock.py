@@ -4,32 +4,32 @@
 
 import json
 
-# product={
-#     "olma": 12000,
-#     "banan":18000,
-#     "shaftoli": 15000,
-#     "uzum":20000
-# }
+product={
+    "olma": 12000,
+    "banan":18000,
+    "shaftoli": 15000,
+    "uzum":20000
+}
 
-# maxsulot=input("maxsulot nomini kriting: ").lower()
-# miqdor=int(input("nechta olishingizni kriting: "))
+maxsulot=input("Maxsulot nomini kriting: ").lower()
+miqdor=int(input("Nechta olishingizni kriting: "))
 
-# if maxsulot in product:
-#     narx=product[maxsulot]*miqdor
+if maxsulot in product:
+    narx=product[maxsulot]*miqdor
 
-#     data={
-#         "maxsulot":maxsulot,
-#         "miqdor":miqdor,
-#         "narx": narx
-#     }
-#     print(f"umumiy narx={narx}")
+    data={
+        "maxsulot":maxsulot,
+        "miqdor":miqdor,
+        "narx": narx
+    }
+    print(f"umumiy narx={narx}")
 
-#     with open("dokon.json","w") as file:
-#         json.dump(data,file,indent=4)
+    with open("dokon.json","w") as file:
+        json.dump(data,file,indent=4)
 
 
-# else:
-#     print("bunday maxsulot mavjut emas.")
+else:
+    print("Bunday maxsulot mavjut emas.")
 
 
 
@@ -60,14 +60,40 @@ import json
 
 # matn = input("Matn kiriting: ")
 # eng_uzun = max(matn.split(), key=len)
-# print(eng_uzun)
+# print(f"Eng uzun so'z: {eng_uzun}")
 
 # with open("matn.txt", "w") as f:
 #     f.write(" ".join(sorted(matn.split())))
 
 # with open("matn.txt") as f:
-#     print(f.read())
+#     print(f"Sortlangani: {f.read()}")
 
 
+# import turtle
 
+# t = turtle.Turtle()
+
+# s = turtle.Screen()
+
+# s.bgcolor("black")
+
+# t.speed(0)
+
+# turtle.tracer(4, 0)
+
+# colors = ["#FFEOB2",
+
+# "#FFB74D", "#FFA726",
+
+# "#FB8C00", "#E65100"]
+
+# for i in range(360):
+
+#     t.color(colors[i % 5])
+
+#     t.circle(140)
+
+#     t.left(1)
+
+# turtle.done()
 

@@ -2,7 +2,7 @@
 
 import json
 
-with open("python/oyin.json", "r") as f:
+with open("oyin.json", "r") as f:
     data = json.load(f)
 
 players = data["players"]
