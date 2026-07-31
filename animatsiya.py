@@ -379,65 +379,360 @@
 #               6-animation.
 
 
-import turtle
-import math
+# import turtle
+# import math
 
-screen = turtle.Screen()
-screen.bgcolor("black")
-screen.title("Heart Animation")
+# screen = turtle.Screen()
+# screen.bgcolor("black")
+# screen.title("Heart Animation")
 
-t = turtle.Turtle()
-t.speed(0)
-t.hideturtle()
-t.width(2)
+# t = turtle.Turtle()
+# t.speed(0)
+# t.hideturtle()
+# t.width(2)
 
-colors = [
-    "#ff0000",
-    "#ff1493",
-    "#ff4500",
-    "#ff69b4",
-    "#ff6347",
-    "#ff00ff"
-]
+# colors = [
+#     "#ff0000",
+#     "#ff1493",
+#     "#ff4500",
+#     "#ff69b4",
+#     "#ff6347",
+#     "#ff00ff"
+# ]
 
-scale = 12
-grow = 0.15
+# scale = 12
+# grow = 0.15
 
-while True:
-    for color in colors:
-        t.clear()
-        t.color(color)
-        t.penup()
+# while True:
+#     for color in colors:
+#         t.clear()
+#         t.color(color)
+#         t.penup()
 
-        first = True
+#         first = True
 
-        for i in range(361):
-            a = math.radians(i)
+#         for i in range(361):
+#             a = math.radians(i)
 
-            x = 16 * math.sin(a) ** 3
-            y = (13 * math.cos(a)
-                 - 5 * math.cos(2 * a)
-                 - 2 * math.cos(3 * a)
-                 - math.cos(4 * a))
+#             x = 16 * math.sin(a) ** 3
+#             y = (13 * math.cos(a)
+#                  - 5 * math.cos(2 * a)
+#                  - 2 * math.cos(3 * a)
+#                  - math.cos(4 * a))
 
-            x *= scale
-            y *= scale
+#             x *= scale
+#             y *= scale
 
-            if first:
-                t.goto(x, y)
-                t.pendown()
-                first = False
-            else:
-                t.goto(x, y)
+#             if first:
+#                 t.goto(x, y)
+#                 t.pendown()
+#                 first = False
+#             else:
+#                 t.goto(x, y)
 
-        scale += grow
+#         scale += grow
 
-        if scale > 15:
-            grow = -0.15
-        elif scale < 11:
-            grow = 0.15
+#         if scale > 15:
+#             grow = -0.15
+#         elif scale < 11:
+#             grow = 0.15
 
-        screen.update()
+#         screen.update()
+
+
+
+
+
+#               7-animation.
+
+# from typing import List
+
+# from PIL.Image import Image
+
+# from animeface import _nvxs
+
+
+# class Point:
+#     x: int
+#     y: int
+
+#     def __init__(self, x: int, y: int):
+#         self.x, self.y = x, y
+
+#     def __repr__(self):
+#         return '(%d, %d)' % (self.x, self.y)
+
+
+# class Box:
+#     x: int
+#     y: int
+#     width: int
+#     height: int
+
+#     def __init__(self, x: int, y: int, width: int, height: int):
+#         self.x, self.y = x, y
+#         self.width, self.height = width, height
+
+#     def __repr__(self):
+#         return '(%d, %d; %d, %d)' % (self.x, self.y, self.width, self.height)
+
+
+# class Color:
+#     r: int
+#     g: int
+#     b: int
+
+#     def __init__(self, r: int, g: int, b: int):
+#         self.r, self.g, self.b = r, g, b
+
+#     def __repr__(self):
+#         return '(%d, %d, %d)' % (self.r, self.g, self.b)
+
+
+# class BoxColorPart:
+#     pos: Box
+#     color: Color
+
+#     def __init__(self, pos: Box, color: Color):
+#         self.pos = pos
+#         self.color = color
+
+#     def __repr__(self):
+#         return '<pos=%r, color=%r>' % (self.pos, self.color)
+
+
+# class PointPart:
+#     pos: Point
+
+#     def __init__(self, pos: Point):
+#         self.pos = pos
+
+#     def __repr__(self):
+#         return '<pos=%r>' % (self.pos, )
+
+
+# class BoxPart:
+#     pos: Box
+
+#     def __init__(self, pos: Box):
+#         self.pos = pos
+
+#     def __repr__(self):
+#         return '<pos=%r>' % (self.pos, )
+
+
+# class ColorPart:
+#     color: Color
+
+#     def __init__(self, color: Color):
+#         self.color = color
+
+#     def __repr__(self):
+#         return '<color=%r>' % (self.color, )
+
+
+# class Face:
+#     likelihood: float
+#     face: BoxPart
+#     skin: ColorPart
+#     hair: ColorPart
+#     left_eye: BoxColorPart
+#     right_eye: BoxColorPart
+#     mouth: BoxPart
+#     nose: PointPart
+#     chin: PointPart
+
+#     def __init__(self, result):
+#         self.likelihood = result['likelihood']
+#         self.face = BoxPart(Box(*result['face_box']))
+#         self.skin = ColorPart(Color(*result['skin_color']))
+#         self.hair = ColorPart(Color(*result['hair_color']))
+#         self.left_eye = BoxColorPart(Box(*result['left_eye_box']),
+#                                      Color(*result['left_eye_color']))
+#         self.right_eye = BoxColorPart(Box(*result['right_eye_box']),
+#                                       Color(*result['right_eye_color']))
+#         self.mouth = BoxPart(Box(*result['mouth_box']))
+#         self.nose = PointPart(Point(*result['nose_point']))
+#         self.chin = PointPart(Point(*result['chin_point']))
+
+#     def __repr__(self):
+#         return ('<animeface.Face '
+#                 'likelihood=%(likelihood)f '
+#                 'face=%(face)r '
+#                 'skin=%(skin)r '
+#                 'hair=%(hair)r '
+#                 'left_eye=%(left_eye)r '
+#                 'right_eye=%(right_eye)r '
+#                 'mouth=%(mouth)r '
+#                 'nose=%(nose)r '
+#                 'chin=%(chin)r>') % self.__dict__
+
+
+# def detect(im: Image) -> List[Face]:
+#     """Detects anime faces.
+
+#   Args:
+#     im: PIL.Image object.
+
+#   Returns:
+#     A list of Face.
+#   """
+#     if im.mode in ('RGB', 'L'):
+#         pass  # Fine.
+#     elif im.mode == '1':
+#         im = im.convert('L')
+#     elif im.mode in ('P', 'RGBA', 'CMYK', 'YCbCr'):
+#         im = im.convert('RGB')
+#     else:
+#         raise ValueError('Unsupported color mode: %s' % im.mode)
+#     results = _nvxs.detect(im.getdata())
+#     return [Face(result) for result in results]
+
+
+
+
+
+#               8-animation.
+
+# import turtle
+# import colorsys
+# import math
+
+
+# def draw_vortex_effect():
+#     screen = turtle.Screen()
+#     screen.bgcolor("black")
+#     screen.title("Chromospheric Vortex")
+
+#     t = turtle.Turtle()
+#     t.speed(0)
+#     t.hideturtle()
+
+#     screen.tracer(2, 0)
+
+#     hue = 0.0
+#     iterations = 400
+#     magic_angle = 121
+
+#     try:
+#         for i in range(iterations):
+#             # Rainbow color effect
+#             color = colorsys.hsv_to_rgb(hue, 0.9, 1)
+#             t.pencolor(color)
+#             hue += 1 / iterations
+
+#             # Dynamic pen width
+#             width = (math.sin(i * 0.05) * 2) + 3
+#             t.width(width)
+
+#             # Main drawing
+#             t.forward(i * 1.5)
+#             t.left(magic_angle)
+#             t.circle(i, 90)
+#             t.right(45)
+
+#             t.forward(i * 1.5)
+#             t.left(magic_angle)
+#             t.circle(i, 90)
+#             t.right(45)
+
+#             screen.update()
+
+#     except turtle.Terminator:
+#         print("Window closed.")
+
+
+# draw_vortex_effect()
+# turtle.done()
+
+
+
+
+#               9-animation.
+
+# import turtle
+# import math
+# import colorsys
+# import random
+
+# screen = turtle.Screen()
+# screen.bgcolor("black")
+# screen.title("❤️ I LOVE YOU ❤️")
+# screen.setup(900, 900)
+
+# screen.tracer(0)
+
+# # Yulduzlar
+# stars = turtle.Turtle()
+# stars.hideturtle()
+# stars.speed(0)
+# stars.penup()
+
+# for _ in range(250):
+#     stars.goto(random.randint(-450, 450), random.randint(-450, 450))
+#     stars.dot(random.randint(1, 3), "white")
+
+# t = turtle.Turtle()
+# t.speed(0)
+# t.hideturtle()
+# t.penup()
+
+# scale = 13
+# direction = 0.15
+# hue = 0
+
+# while True:
+
+#     t.clear()
+
+#     hue += 0.003
+#     if hue > 1:
+#         hue = 0
+
+#     rgb = colorsys.hsv_to_rgb(hue, 1, 1)
+#     t.color(rgb)
+
+#     scale += direction
+
+#     if scale > 17:
+#         direction = -0.15
+
+#     if scale < 13:
+#         direction = 0.15
+
+#     for i in range(180):
+
+#         angle = math.radians(i * 2)
+
+#         x = 16 * (math.sin(angle) ** 3) * scale
+
+#         y = (13 * math.cos(angle)
+#              - 5 * math.cos(2 * angle)
+#              - 2 * math.cos(3 * angle)
+#              - math.cos(4 * angle)) * scale
+
+#         t.goto(x, y)
+
+#         size = int(8 + 3 * abs(math.sin(angle * 4)))
+
+#         t.write(
+#             "I LOVE YOU",
+#             align="center",
+#             font=("Arial", size, "bold")
+#         )
+
+#     # Markazdagi yozuv
+#     t.goto(0, -20)
+#     t.color("white")
+#     t.write(
+#         "❤️ FOREVER ❤️",
+#         align="center",
+#         font=("Arial", 26, "bold")
+#     )
+
+#     screen.update()
+
+# turtle.done()
 
 
 

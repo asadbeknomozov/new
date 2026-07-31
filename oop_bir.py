@@ -174,7 +174,46 @@ class Bino:
 
 
         
-#               
+#               9-masala.
+
+# class market:
+#     def __init__(self):
+#         self.product=[]
+#         self.narxi=0.0
+
+#     def addProduct(self,name: str,price:float):
+#         maxsulot={
+#             "name":name,
+#             "price":price
+#         }
+#         self.product.append(maxsulot)
+#         print(f"{name} -> qo'shildi")
+
+#     def removeProduct(self,name:str):
+#         for i in self.product:
+#             if i["name"]==name.lower():
+#                 self.product.remove(i)
+#                 print(f"{name} -> o'chirildi")
+
+#     def get_all_price(self):
+#         total=sum(i["price"] for i in self.product)
+#         self.narxi=float(total)
+#         print(f"markarteda jami maxsulotlarning narxi: {self.narxi}")
+
+# my_market=market()
+# my_market.addProduct("olma",12000)
+# my_market.addProduct("sut",5000)
+# my_market.addProduct("qand",6000)
+
+# print("-"*50)
+# my_market.get_all_price()
+
+# print("-"*50)
+# my_market.removeProduct("olma")
+
+
+
+
 
 
 
