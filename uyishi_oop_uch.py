@@ -432,46 +432,46 @@
 
 #               11-masala.
 
-class MyDate:
+# class MyDate:
 
-    DAY_IN_MONTHS = [31,28,31,30,31,30,31,31,30,31,30,31]
+#     DAY_IN_MONTHS = [31,28,31,30,31,30,31,31,30,31,30,31]
 
-    def __init__(self, day, month, year):
+#     def __init__(self, day, month, year):
 
-        if not self.isValidDate(day, month, year):
-            raise ValueError("Noto'g'ri sana kiritildi!")
+#         if not self.isValidDate(day, month, year):
+#             raise ValueError("Noto'g'ri sana kiritildi!")
 
-        self.day = day
-        self.month = month
-        self.year = year
+#         self.day = day
+#         self.month = month
+#         self.year = year
 
-    def isLeapYear(self, year):
-        return (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0)
+#     def isLeapYear(self, year):
+#         return (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0)
 
-    def isValidDate(self, day, month, year):
+#     def isValidDate(self, day, month, year):
 
-        if year < 1 or year > 9999:
-            return False
+#         if year < 1 or year > 9999:
+#             return False
 
-        if month < 1 or month > 12:
-            return False
+#         if month < 1 or month > 12:
+#             return False
 
-        days = self.DAY_IN_MONTHS[month - 1]
+#         days = self.DAY_IN_MONTHS[month - 1]
 
-        if month == 2 and self.isLeapYear(year):
-            days = 29
+#         if month == 2 and self.isLeapYear(year):
+#             days = 29
 
-        if day < 1 or day > days:
-            return False
+#         if day < 1 or day > days:
+#             return False
 
-        return True
+#         return True
 
 
-try:
-    sana = MyDate(32, 5, 2023)
-    print(sana)
-except ValueError as e:
-    print(e)
+# try:
+#     sana = MyDate(32, 5, 2023)
+#     print(sana)
+# except ValueError as e:
+#     print(e)
 
 
 
@@ -479,7 +479,61 @@ except ValueError as e:
 
 #               12-masala.
 
+# class MyDate:
 
+#     MONTHS = [
+#         "Yanvar", "Fevral", "Mart", "Aprel",
+#         "May", "Iyun", "Iyul", "Avgust",
+#         "Sentabr", "Oktabr", "Noyabr", "Dekabr"
+#     ]
+
+#     DAY_IN_MONTHS = [31,28,31,30,31,30,31,31,30,31,30,31]
+
+#     def __init__(self, day, month, year):
+
+#         if not self.isValidDate(day, month, year):
+#             raise ValueError("Noto'g'ri sana kiritildi!")
+
+#         self.day = day
+#         self.month = month
+#         self.year = year
+
+#     def isLeapYear(self, year):
+#         return (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0)
+
+#     def isValidDate(self, day, month, year):
+
+#         if year < 1 or year > 9999:
+#             return False
+
+#         if month < 1 or month > 12:
+#             return False
+
+#         days = self.DAY_IN_MONTHS[month - 1]
+
+#         if month == 2 and self.isLeapYear(year):
+#             days = 29
+
+#         if day < 1 or day > days:
+#             return False
+
+#         return True
+
+#     def setDate(self, day, month, year):
+
+#         if not self.isValidDate(day, month, year):
+#             raise ValueError("Noto'g'ri sana kiritildi!")
+
+#         self.day = day
+#         self.month = month
+#         self.year = year
+
+#     def __str__(self):
+#         return f"{self.day}-{self.MONTHS[self.month-1]} {self.year} yil"
+
+# sana = MyDate(15, 6, 2023)
+# sana.setDate(5, 7, 2023)
+# print(sana)
 
 
 
@@ -487,7 +541,66 @@ except ValueError as e:
 
 #               13-masala.
 
+# class MyDate:
 
+#     MONTHS = [
+#         "Yanvar", "Fevral", "Mart", "Aprel",
+#         "May", "Iyun", "Iyul", "Avgust",
+#         "Sentabr", "Oktabr", "Noyabr", "Dekabr"
+#     ]
+
+#     DAY_IN_MONTHS = [31,28,31,30,31,30,31,31,30,31,30,31]
+
+#     def __init__(self, day, month, year):
+
+#         if not self.isValidDate(day, month, year):
+#             raise ValueError("Noto'g'ri sana kiritildi!")
+
+#         self.day = day
+#         self.month = month
+#         self.year = year
+
+#     def isLeapYear(self, year):
+#         return (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0)
+
+#     def isValidDate(self, day, month, year):
+
+#         if year < 1 or year > 9999:
+#             return False
+
+#         if month < 1 or month > 12:
+#             return False
+
+#         days = self.DAY_IN_MONTHS[month - 1]
+
+#         if month == 2 and self.isLeapYear(year):
+#             days = 29
+
+#         if day < 1 or day > days:
+#             return False
+
+#         return True
+
+#     def setDate(self, day, month, year):
+
+#         if not self.isValidDate(day, month, year):
+#             raise ValueError("Noto'g'ri sana kiritildi!")
+
+#         self.day = day
+#         self.month = month
+#         self.year = year
+
+#     def __str__(self):
+#         return f"{self.day}-{self.MONTHS[self.month-1]} {self.year} yil"
+
+
+# try:
+#     sana = MyDate(15, 6, 2023)
+#     sana.setDate(31, 4, 2023)
+#     print(sana)
+
+# except ValueError as e:
+#     print(e)
 
 
 
