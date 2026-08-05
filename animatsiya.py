@@ -725,7 +725,7 @@
 #     t.goto(0, -20)
 #     t.color("white")
 #     t.write(
-#         "❤️ FOREVER ❤️",
+#         " FOREVER ",
 #         align="center",
 #         font=("Arial", 26, "bold")
 #     )
@@ -733,53 +733,5 @@
 #     screen.update()
 
 # turtle.done()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
