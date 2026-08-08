@@ -173,8 +173,8 @@ ALTER TABLE students
 
 ===================================== SINF ISHI ======================================
 
-CREATE DATABASE COURSE_PLATFORM;
-USE COURSE_PLATFORM;
+CREATE DATABASE course_platforms;
+USE course_platforms;
 
 CREATE TABLE IF NOT EXISTS courses(id INT AUTO_INCREMENT PRIMARY KEY,
     Title VARCHAR(200) NOT NULL,
@@ -188,74 +188,71 @@ CREATE TABLE IF NOT EXISTS courses(id INT AUTO_INCREMENT PRIMARY KEY,
 INSERT INTO courses
 (Title, Instructor, DurationHr, Price, Rating, Enrolled)
 VALUES
-('Python dasturlash asoslari', 'Ali Valiyev', 40.0, 450000.00, 4.8, 120),
-
-('Web dasturlash HTML CSS', 'Sherzod Qodirov', 35.0, 0.00, 4.6, 95),
-
-('JavaScript asoslari', 'Sardor Toshpulatov', 45.0, 500000.00, 4.7, 110),
-
-('SQL va ma''lumotlar bazasi', 'Nodirbek Karimov', 30.0, 350000.00, 4.9, 150),
-
-('Python OOP', 'Azizbek Rahimov', 38.5, 0.00, 4.8, 85),
-
-('C++ dasturlash', 'Nodirbek Karimov', 50.0, 550000.00, 4.5, 70),
-
-('Java dasturlash', 'Ulugbek Saidov', 55.0, 600000.00, 4.6, 65),
-
-('Frontend dasturlash', 'Muhammad Aliyev', 60.0, 700000.00, 4.9, 130),
-
-('Backend dasturlash', 'Sherzod Qodirov', 65.0, 0.00, 4.7, 90),
-
-('Sun''iy intellekt asoslari', 'Akmal Raxmatov', 45.5, 650000.00, 4.8, 75),
-
-('Grafik dizayn', 'Madina Usmonova', 32.0, 380000.00, 4.4, 60),
-
-('Mobil ilovalar yaratish', 'Nodirbek Karimov', 55.0, 680000.00, 4.7, 80),
-
-('Cyber Security asoslari', 'Oybek Abdullayev', 48.0, 620000.00, 4.6, 72),
-
-('Data Science asoslari', 'Ulugbek Saidov', 50.5, 700000.00, 4.9, 105),
-
-('Git va GitHub', 'Farrux Xolmatov', 20.0, 250000.00, 4.5, 140);
+('Python Basic','Muhammad Ali',35.5,0,4.8,1200),
+('Python Advanced','Muhammad Ali',60.0,350000,4.9,850),
+('C++ Basic','Aziz Karim',40.0,250000,4.5,500),
+('Java Programming','Ali Valiyev',50.0,400000,4.7,620),
+('Web Development','Muhammad Yusuf',80.0,500000,4.9,950),
+('SQL Master','Muhammad Ali',25.0,150000,4.6,780),
+('HTML CSS','Dilshod',18.0,0,4.4,1300),
+('JavaScript','Aziz Karim',45.0,300000,4.8,740),
+('React JS','Muhammad Yusuf',55.0,450000,4.9,680),
+('Node JS','Ali Valiyev',48.0,380000,4.7,510),
+('Flutter','Muhammad Ali',65.0,550000,4.8,430),
+('Machine Learning','Aziz Karim',95.0,700000,5.0,290),
+('Data Science','Muhammad Yusuf',90.0,650000,4.9,350),
+('Excel Basic','Dilshod',12.0,0,4.3,980),
+('Git GitHub','Ali Valiyev',15.0,100000,4.6,610);
  
 #   1-masala.
 
 SELECT * FROM courses WHERE Price = 0;
-+----+-------------------------+-----------------+------------+-------+--------+----------+
-| id | Title                   | Instructor      | DurationHr | Price | Rating | Enrolled |
-+----+-------------------------+-----------------+------------+-------+--------+----------+
-| 17 | Web dasturlash HTML CSS | Jasur Karimov   |       35.0 |  0.00 |    4.6 |       95 |
-| 20 | Python OOP              | Azizbek Rahimov |       38.5 |  0.00 |    4.8 |       85 |
-| 24 | Backend dasturlash      | Sherzod Qodirov |       65.0 |  0.00 |    4.7 |       90 |
-+----+-------------------------+-----------------+------------+-------+--------+----------+
-
++----+--------------+--------------+------------+-------+--------+----------+
+| id | Title        | Instructor   | DurationHr | Price | Rating | Enrolled |
++----+--------------+--------------+------------+-------+--------+----------+
+|  1 | Python Basic | Muhammad Ali |       35.5 |  0.00 |    4.8 |     1200 |
+|  7 | HTML CSS     | Dilshod      |       18.0 |  0.00 |    4.4 |     1300 |
+| 14 | Excel Basic  | Dilshod      |       12.0 |  0.00 |    4.3 |      980 |
++----+--------------+--------------+------------+-------+--------+----------+
 
 #   2-masala.
 
 SELECT * FROM courses ORDER BY Title DESC LIMIT 3;
-+----+---------------------------+----------------+------------+-----------+--------+----------+
-| id | Title                     | Instructor     | DurationHr | Price     | Rating | Enrolled |
-+----+---------------------------+----------------+------------+-----------+--------+----------+
-|  2 | Web dasturlash HTML CSS   | Jasur Karimov  |       35.0 | 400000.00 |    4.6 |       95 |
-| 17 | Web dasturlash HTML CSS   | Jasur Karimov  |       35.0 |      0.00 |    4.6 |       95 |
-| 10 | Suniy intellekt asoslari  | Akmal Raxmatov |       45.5 | 650000.00 |    4.8 |       75 |
-+----+---------------------------+----------------+------------+-----------+--------+----------+
-
++----+-----------------+----------------+------------+-----------+--------+----------+
+| id | Title           | Instructor     | DurationHr | Price     | Rating | Enrolled |
++----+-----------------+----------------+------------+-----------+--------+----------+
+|  5 | Web Development | Muhammad Yusuf |       80.0 | 500000.00 |    4.9 |      950 |
+|  6 | SQL Master      | Muhammad Ali   |       25.0 | 150000.00 |    4.6 |      780 |
+|  9 | React JS        | Muhammad Yusuf |       55.0 | 450000.00 |    4.9 |      680 |
++----+-----------------+----------------+------------+-----------+--------+----------+
 
 #   3-masala.
 
-SELECT *FROM courses WHERE Instructor="Muhammad Aliyev";
-+----+---------------------+-----------------+------------+-----------+--------+----------+
-| id | Title               | Instructor      | DurationHr | Price     | Rating | Enrolled |
-+----+---------------------+-----------------+------------+-----------+--------+----------+
-|  8 | Frontend dasturlash | Muhammad Aliyev |       60.0 | 700000.00 |    4.9 |      130 |
-+----+---------------------+-----------------+------------+-----------+--------+----------+
-
+SELECT * FROM courses WHERE Instructor LIKE '%Muhammad%';
++----+-----------------+----------------+------------+-----------+--------+----------+
+| id | Title           | Instructor     | DurationHr | Price     | Rating | Enrolled |
++----+-----------------+----------------+------------+-----------+--------+----------+
+|  1 | Python Basic    | Muhammad Ali   |       35.5 |      0.00 |    4.8 |     1200 |
+|  2 | Python Advanced | Muhammad Ali   |       60.0 | 350000.00 |    4.9 |      850 |
+|  5 | Web Development | Muhammad Yusuf |       80.0 | 500000.00 |    4.9 |      950 |
+|  6 | SQL Master      | Muhammad Ali   |       25.0 | 150000.00 |    4.6 |      780 |
+|  9 | React JS        | Muhammad Yusuf |       55.0 | 450000.00 |    4.9 |      680 |
+| 11 | Flutter         | Muhammad Ali   |       65.0 | 550000.00 |    4.8 |      430 |
+| 13 | Data Science    | Muhammad Yusuf |       90.0 | 650000.00 |    4.9 |      350 |
++----+-----------------+----------------+------------+-----------+--------+----------+
 
 #   4-masala.
 
-SELECT * FROM courses GROUP BY;
-
+SELECT Instructor, COUNT(*) AS Kurslar_soni FROM courses GROUP BY Instructor;
++----------------+--------------+
+| Instructor     | Kurslar_soni |
++----------------+--------------+
+| Muhammad Ali   |            4 |
+| Aziz Karim     |            3 |
+| Ali Valiyev    |            3 |
+| Muhammad Yusuf |            3 |
+| Dilshod        |            2 |
++----------------+--------------+
 
 
 
