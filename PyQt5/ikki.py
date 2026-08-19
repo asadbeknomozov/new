@@ -254,39 +254,39 @@
 
 
 
-# from PyQt5.QtWidgets import QApplication, QWidget, QListWidget, QVBoxLayout, QComboBox
+from PyQt5.QtWidgets import QApplication, QWidget, QListWidget, QVBoxLayout, QComboBox
 
-# class MyWindow(QWidget):
-#     def __init__(self):
-#         super().__init__()
+class MyWindow(QWidget):
+    def __init__(self):
+        super().__init__()
 
-#         self.setStyleSheet("font-size:20px")
+        self.setStyleSheet("font-size:20px")
 
-#         self.v_main_lay = QVBoxLayout()
+        self.v_main_lay = QVBoxLayout()
 
-#         self.cmb = QComboBox()
-#         self.cmb.addItem("C")
-#         self.cmb.addItems(["Python", "Go", "JS", "C++"])
-#         self.cmb.activated[str].connect(self.Test)
+        self.cmb = QComboBox()
+        self.cmb.addItem("C")
+        self.cmb.addItems(["Python", "Go", "JS", "C++"])
+        self.cmb.activated[str].connect(self.Test)
 
-#         self.lst_wdg = QListWidget()
+        self.lst_wdg = QListWidget()
 
-#         self.v_main_lay.addWidget(self.cmb)
-#         self.v_main_lay.addWidget(self.lst_wdg)
+        self.v_main_lay.addWidget(self.cmb)
+        self.v_main_lay.addWidget(self.lst_wdg)
 
-#         self.setLayout(self.v_main_lay)
+        self.setLayout(self.v_main_lay)
 
-#     def Test(self, obj):
-#         self.lst_wdg.clear()
-#         if obj == "C":
-#             self.lst_wdg.addItem("Bu til .... yilda ishlab chiqilgan bo'lib")
-#         elif obj == "Python":
-#             self.lst_wdg.addItem("What where why")
+    def Test(self, obj):
+        self.lst_wdg.clear()
+        if obj == "C":
+            self.lst_wdg.addItem("Bu til .... yilda ishlab chiqilgan bo'lib")
+        elif obj == "Python":
+            self.lst_wdg.addItem("What where why")
 
-# app = QApplication([])
-# win = MyWindow()
-# win.show()
-# app.exec_()
+app = QApplication([])
+win = MyWindow()
+win.show()
+app.exec_()
 
 
 
